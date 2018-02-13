@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MyEdit:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/MyEdit_jar</output-path>
+    <root id="archive" name="MyEdit.jar">
+      <element id="module-output" name="MyEdit" />
+    </root>
+  </artifact>
+</component>
