@@ -87,9 +87,9 @@ public class FileWindow extends JFrame implements ActionListener, Runnable {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == button_input_txt) {      //刚刚解决了一个存在两个月的语法错误，错误主要是if和后面else语句的位置错误
+		if(e.getSource() == button_input_txt) {      
 			mycard.show(p, "input");
-		} else if (e.getSource() == button_compiler_text) {  //以后不能这么粗心
+		} else if (e.getSource() == button_compiler_text) {  
 			mycard.show(p, "compiler");
 		} else if (e.getSource() == button_see_doswin) {
 			mycard.show(p, "dos");
@@ -146,9 +146,9 @@ public class FileWindow extends JFrame implements ActionListener, Runnable {
 			}
 			try {
 
-				// 获得该进程的错误流，才可以知道运行结果到底是失败了还是成功。
+				
 				Runtime rt = Runtime.getRuntime();
-				InputStream in = rt.exec("javac " + file_name).getErrorStream(); // 通过Runtime调用javac命令
+				InputStream in = rt.exec("javac " + file_name).getErrorStream(); 
 
 				BufferedInputStream bufIn = new BufferedInputStream(in);
 
@@ -165,7 +165,7 @@ public class FileWindow extends JFrame implements ActionListener, Runnable {
 						flag = false;
 					}
 				}
-				// 判断是否编译成功
+				
 				if (flag) {
 					compiler_text.append("Compile Succeed!");
 				}
@@ -180,7 +180,7 @@ public class FileWindow extends JFrame implements ActionListener, Runnable {
 			try {
 				Runtime rt = Runtime.getRuntime();
 				String path = run_file_name_text.getText().trim();
-				Process stream = rt.exec("java " + path);// 调用java命令
+				Process stream = rt.exec("java " + path);
 
 				InputStream in = stream.getInputStream();
 				BufferedInputStream bisErr = new BufferedInputStream(
